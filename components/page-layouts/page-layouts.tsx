@@ -26,7 +26,7 @@ export default function PortfolioLayout({ children }: { children?: React.ReactNo
       <AppSidebar />
       <SidebarInset>
         <AppHeader />
-        <div className="flex flex-1 flex-col gap-6 p-8 pt-4 max-w-5xl mx-auto w-full">
+        <div className="flex flex-1 flex-col gap-6 p-8 pt-4 w-full">
           {/* Hero Section */}
           <section
             className="relative overflow-hidden rounded-3xl p-10 border border-border"
