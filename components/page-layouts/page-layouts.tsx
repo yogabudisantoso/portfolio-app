@@ -16,6 +16,8 @@ import {
 import { SkillsSection } from "@/components/skills-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { CopyrightSection } from "@/components/copyright-section";
+import { EducationSection } from "@/components/education-section";
+import { PublicationsSection } from "@/components/publications-section";
 import { useLanguage } from "@/components/language-provider";
 
 export default function PortfolioLayout({ children }: { children?: React.ReactNode }) {
@@ -39,9 +41,9 @@ export default function PortfolioLayout({ children }: { children?: React.ReactNo
               priority
             />
             
-            <div className="relative z-10 space-y-4 md:w-3/4">
+            <div className="relative z-10 space-y-4 w-full">
               <TypingAnimation
-                words={[t("hero.titles_0"), t("hero.titles_1"), t("hero.titles_2")]}
+                words={[t("hero.titles_0"), t("hero.titles_1")]}
                 className="text-left text-white text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight drop-shadow-lg"
                 loop={true}
                 duration={100}
@@ -50,13 +52,22 @@ export default function PortfolioLayout({ children }: { children?: React.ReactNo
               <AnimatedText
                 key={t("hero.desc")}
                 text={t("hero.desc")}
-                className="max-w-2xl text-lg text-white/90 font-medium drop-shadow-md"
+                className="max-w-6xl text-lg text-white/90 font-medium drop-shadow-md"
                 animationType="words"
                 staggerDelay={0.02}
                 duration={0.6}
               />
             </div>
           </section>
+
+          {/* Education Section */}
+          <EducationSection />
+
+          {/* Skills Section */}
+          <SkillsSection />
+
+          {/* Projects Section */}
+          <ProjectsSection />
 
           {/* Experience Section */}
           <section className="flex flex-col p-10 rounded-3xl border border-border bg-card">
@@ -65,18 +76,17 @@ export default function PortfolioLayout({ children }: { children?: React.ReactNo
             </h2>
             
             <Changelog>
-              <ChangelogItem date="Sep 2025 - Present">
+              <ChangelogItem date="Jun 2026 - Present">
                 <ChangelogItemVersion>{t("exp.1.ver")}</ChangelogItemVersion>
                 <ChangelogItemTitle>{t("exp.1.title")}</ChangelogItemTitle>
                 <ChangelogItemDescription>
                   <ul className="list-disc pl-5 space-y-2">
                     <li>{t("exp.1.desc1")}</li>
-                    <li>{t("exp.1.desc2")}</li>
                   </ul>
                 </ChangelogItemDescription>
               </ChangelogItem>
 
-              <ChangelogItem date="Oct 2025 - Apr 2026">
+              <ChangelogItem date="Sep 2025 - Present">
                 <ChangelogItemVersion>{t("exp.2.ver")}</ChangelogItemVersion>
                 <ChangelogItemTitle>{t("exp.2.title")}</ChangelogItemTitle>
                 <ChangelogItemDescription>
@@ -87,7 +97,7 @@ export default function PortfolioLayout({ children }: { children?: React.ReactNo
                 </ChangelogItemDescription>
               </ChangelogItem>
 
-              <ChangelogItem date="Mar 2026 - Jun 2026">
+              <ChangelogItem date="Oct 2025 - Apr 2026">
                 <ChangelogItemVersion>{t("exp.3.ver")}</ChangelogItemVersion>
                 <ChangelogItemTitle>{t("exp.3.title")}</ChangelogItemTitle>
                 <ChangelogItemDescription>
@@ -98,7 +108,7 @@ export default function PortfolioLayout({ children }: { children?: React.ReactNo
                 </ChangelogItemDescription>
               </ChangelogItem>
 
-              <ChangelogItem date="Jun 2026">
+              <ChangelogItem date="Mar 2026 - Jun 2026">
                 <ChangelogItemVersion>{t("exp.4.ver")}</ChangelogItemVersion>
                 <ChangelogItemTitle>{t("exp.4.title")}</ChangelogItemTitle>
                 <ChangelogItemDescription>
@@ -109,17 +119,18 @@ export default function PortfolioLayout({ children }: { children?: React.ReactNo
                 </ChangelogItemDescription>
               </ChangelogItem>
 
-              <ChangelogItem date="Mar 2025 - Jun 2026">
+              <ChangelogItem date="Jun 2026">
                 <ChangelogItemVersion>{t("exp.5.ver")}</ChangelogItemVersion>
                 <ChangelogItemTitle>{t("exp.5.title")}</ChangelogItemTitle>
                 <ChangelogItemDescription>
                   <ul className="list-disc pl-5 space-y-2">
                     <li>{t("exp.5.desc1")}</li>
+                    <li>{t("exp.5.desc2")}</li>
                   </ul>
                 </ChangelogItemDescription>
               </ChangelogItem>
 
-              <ChangelogItem date="Feb 2025 - Jun 2026">
+              <ChangelogItem date="Feb 2025 - May 2025">
                 <ChangelogItemVersion>{t("exp.6.ver")}</ChangelogItemVersion>
                 <ChangelogItemTitle>{t("exp.6.title")}</ChangelogItemTitle>
                 <ChangelogItemDescription>
@@ -130,7 +141,7 @@ export default function PortfolioLayout({ children }: { children?: React.ReactNo
                 </ChangelogItemDescription>
               </ChangelogItem>
 
-              <ChangelogItem date="Oct 2024 - Jun 2026">
+              <ChangelogItem date="Feb 2025 - Jun 2026">
                 <ChangelogItemVersion>{t("exp.7.ver")}</ChangelogItemVersion>
                 <ChangelogItemTitle>{t("exp.7.title")}</ChangelogItemTitle>
                 <ChangelogItemDescription>
@@ -141,7 +152,7 @@ export default function PortfolioLayout({ children }: { children?: React.ReactNo
                 </ChangelogItemDescription>
               </ChangelogItem>
 
-              <ChangelogItem date="Sep 2024 - Jun 2026">
+              <ChangelogItem date="Oct 2024 - Jun 2026">
                 <ChangelogItemVersion>{t("exp.8.ver")}</ChangelogItemVersion>
                 <ChangelogItemTitle>{t("exp.8.title")}</ChangelogItemTitle>
                 <ChangelogItemDescription>
@@ -152,7 +163,7 @@ export default function PortfolioLayout({ children }: { children?: React.ReactNo
                 </ChangelogItemDescription>
               </ChangelogItem>
 
-              <ChangelogItem date="Sep 2023 - Jun 2026">
+              <ChangelogItem date="Feb 2024 - Jul 2024">
                 <ChangelogItemVersion>{t("exp.9.ver")}</ChangelogItemVersion>
                 <ChangelogItemTitle>{t("exp.9.title")}</ChangelogItemTitle>
                 <ChangelogItemDescription>
@@ -162,14 +173,22 @@ export default function PortfolioLayout({ children }: { children?: React.ReactNo
                   </ul>
                 </ChangelogItemDescription>
               </ChangelogItem>
+
+              <ChangelogItem date="Sep 2023 - Jun 2026">
+                <ChangelogItemVersion>{t("exp.10.ver")}</ChangelogItemVersion>
+                <ChangelogItemTitle>{t("exp.10.title")}</ChangelogItemTitle>
+                <ChangelogItemDescription>
+                  <ul className="list-disc pl-5 space-y-2">
+                    <li>{t("exp.10.desc1")}</li>
+                    <li>{t("exp.10.desc2")}</li>
+                  </ul>
+                </ChangelogItemDescription>
+              </ChangelogItem>
             </Changelog>
           </section>
 
-          {/* Skills Section */}
-          <SkillsSection />
-          
-          {/* Projects Section */}
-          <ProjectsSection />
+          {/* Publications Section */}
+          <PublicationsSection />
 
           {/* Copyright Section */}
           <CopyrightSection />

@@ -70,7 +70,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarGroupLabel>{t("sidebar.resume")}</SidebarGroupLabel>
           <SidebarMenu>
             <SidebarMenuItem>
-              <a href="/cv-ats.pdf" target="_blank" rel="noopener noreferrer" className="w-full block mt-2">
+              <a href="/cv-yoga-budi-santoso.pdf" target="_blank" rel="noopener noreferrer" className="w-full block mt-2">
                 <HoverBorderGradient
                   containerClassName="w-full rounded-lg"
                   className="w-full dark:bg-black bg-white text-black dark:text-white flex items-center justify-center space-x-2 text-sm py-2"

@@ -22,8 +22,15 @@ import {
   SiPostman,
   SiGooglecloud,
   SiGnubash,
+  SiPhp,
+  SiPython,
+  SiReact,
+  SiVuedotjs,
+  SiCplusplus,
+  SiLinux,
+  SiArduino,
 } from "react-icons/si";
-import { FaAws } from "react-icons/fa";
+import { FaAws, FaHtml5, FaCss3Alt } from "react-icons/fa";
 import { cn } from "@/lib/utils";
 
 const TWEEN = { type: "tween" as const, ease: [0.25, 0.1, 0.25, 1.0] as [number, number, number, number], duration: 0.25 };
@@ -37,11 +44,18 @@ interface Skill {
 
 const skills: Skill[] = [
   { name: "Laravel", Icon: SiLaravel, color: "#FF2D20", category: "Backend" },
+  { name: "PHP", Icon: SiPhp, color: "#7778BB", category: "Backend" },
+  { name: "Python", Icon: SiPython, color: "#3776AB", category: "Backend" },
   { name: "Next.js", Icon: SiNextdotjs, color: "#FFFFFF", category: "Frontend" },
+  { name: "React", Icon: SiReact, color: "#61DAFB", category: "Frontend" },
+  { name: "Vue.js", Icon: SiVuedotjs, color: "#4FC08D", category: "Frontend" },
   { name: "JavaScript", Icon: SiJavascript, color: "#F7DF1E", category: "Frontend" },
+  { name: "HTML5", Icon: FaHtml5, color: "#E34F26", category: "Frontend" },
+  { name: "CSS3", Icon: FaCss3Alt, color: "#1572B6", category: "Frontend" },
   { name: "Java Spring", Icon: SiSpring, color: "#6DB33F", category: "Backend" },
   { name: "Golang", Icon: SiGo, color: "#00ADD8", category: "Backend" },
   { name: ".NET", Icon: SiDotnet, color: "#512BD4", category: "Backend" },
+  { name: "C++", Icon: SiCplusplus, color: "#00599C", category: "Tools" },
   { name: "Ollama", Icon: SiOllama, color: "#FFFFFF", category: "Tools" },
   { name: "GitHub", Icon: SiGithub, color: "#FFFFFF", category: "Tools" },
   { name: "Git", Icon: SiGit, color: "#F05032", category: "Tools" },
@@ -51,6 +65,8 @@ const skills: Skill[] = [
   { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#06B6D4", category: "Frontend" },
   { name: "Bootstrap", Icon: SiBootstrap, color: "#7952B3", category: "Frontend" },
   { name: "Docker", Icon: SiDocker, color: "#2496ED", category: "Tools" },
+  { name: "Linux", Icon: SiLinux, color: "#FCC624", category: "Tools" },
+  { name: "Arduino", Icon: SiArduino, color: "#008789", category: "Tools" },
   { name: "Postman", Icon: SiPostman, color: "#FF6C37", category: "Tools" },
   { name: "AWS", Icon: FaAws, color: "#FFFFFF", category: "Backend" },
   { name: "Google Cloud", Icon: SiGooglecloud, color: "#4285F4", category: "Backend" },
@@ -104,16 +120,17 @@ export function SkillsSection() {
       </div>
 
       <div className="flex flex-wrap gap-3">
-        <AnimatePresence initial={false}>
+        <AnimatePresence mode="popLayout" initial={false}>
           {filteredSkills.map((skill, i) => {
             const isNeutral = skill.color === "#FFFFFF" || skill.color === "#000000";
 
             return (
               <motion.div
                 key={skill.name}
+                layout
                 initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0, transition: { ...TWEEN, delay: i * 0.025 } }}
-                exit={{ opacity: 0, y: -4, transition: { ...TWEEN, delay: 0, duration: 0.15 } }}
+                animate={{ opacity: 1, y: 0, transition: { ...TWEEN, delay: Math.min(i, 12) * 0.02 } }}
+                exit={{ opacity: 0, scale: 0.9, transition: { ...TWEEN, duration: 0.12 } }}
                 className={cn(
                   "flex items-center gap-2 px-4 py-2 rounded-full border cursor-default hover:opacity-80",
                   isNeutral
